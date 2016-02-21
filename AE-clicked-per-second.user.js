@@ -3,7 +3,7 @@
 // @namespace   CookieClickerClickCPS
 // @description Shows your clicking within the CPS count of Cookie Clicker
 // @include     http://orteil.dashnet.org/cookieclicker/
-// @version     1
+// @version     2
 // @grant       none
 // ==/UserScript==
 Game.AE_realMouseCps = 0;
