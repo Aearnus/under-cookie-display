@@ -6,6 +6,7 @@
 // @version     2
 // @grant       none
 // ==/UserScript==
+Game.Notify('Under Cookie Display','NOTE: if you are using Frozen Cookies autoclick, AE-clicked-per-second may or may not work. Use AE-clicked-per-second-deprecated if it does not.',"");
 Game.AE_realMouseCps = 0;
 Game.AE_clicksThisTimePeriod = 0;
 Game.AE_mouseCpsUpdateFrequency = 2;
@@ -19,20 +20,20 @@ Game.AE_ComputeRealMouseCps = function ()
   Game.AE_clicksThisTimePeriod = 0;
 }
 
-//duplicate ClickCookie functions before changing them
+//duplicate functions before changing them
 Game.AE_ClickCookie = Game.ClickCookie; 
-Game.AE_Draw = Game.Draw
+Game.AE_Draw = Game.Draw;
 
 //BINDINGS
 Game.ClickCookie = function (event, amount)
 {
-  Game.AE_ClickCookie(event, amount);
   Game.AE_clicksThisTimePeriod++;
+  Game.AE_ClickCookie(event, amount);
 }
 Game.Draw = function ()
 {
   Game.AE_Draw();
-  str = str + '<div style="font-size:50%;"' + (Game.cpsSucked > 0 ? ' class="warning"' : '') + '>per second : ' + Beautify(Game.cookiesPs * (1 - Game.cpsSucked), 1) + '</div><div style="font-size:50%;">clicked per second: ' + Beautify(Game.AE_realMouseCps, 1) + '</div>'; //display cookie amount
+  l("cookies").innerHTML += '<div style="font-size:50%;">clicked per second: ' + Beautify(Game.AE_realMouseCps, 1) + '</div>'; //display cookie amount
 }
 if (!Game.touchEvents)
 {
