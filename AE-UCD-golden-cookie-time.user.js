@@ -8,11 +8,16 @@
 // ==/UserScript==
 
 setTimeout(function(){
-	Game.UCD.goldenCookieTimerDisplay = document.createElement("div");
-	Game.UCD.goldenCookieTimerDisplay.setAttribute("style", "font-size: 50%");
-	l("underCookieDisplay").appendChild(Game.UCD.goldenCookieTimerDisplay);
+	Game.UCD.goldenCookieMinTimerDisplay = document.createElement("div");
+	Game.UCD.goldenCookieMinTimerDisplay.setAttribute("style", "font-size: 50%");
+	l("underCookieDisplay").appendChild(Game.UCD.goldenCookieMinTimerDisplay);
+	Game.UCD.goldenCookieMaxTimerDisplay = document.createElement("div");
+	Game.UCD.goldenCookieMaxTimerDisplay.setAttribute("style", "font-size: 50%");
+	l("underCookieDisplay").appendChild(Game.UCD.goldenCookieMaxTimerDisplay);
 	setInterval(function() {
-		var timeRemaining = Game.goldenCookie.minTime - Game.goldenCookie.time;
-		Game.UCD.goldenCookieTimerDisplay.innerHTML = "minimum time until next golden cookie: " + (timeRemaining =< 0 ? "none" : timeRemaining) 
+		var minTimeRemaining = Game.goldenCookie.minTime - Game.goldenCookie.time;
+		Game.UCD.goldenCookieMinTimerDisplay.innerHTML = "min time until next golden cookie: " + (minTimeRemaining <= 0 ? "none, get ready" : minTimeRemaining);
+		var maxTimeRemaining = Game.goldenCookie.maxTime - Game.goldenCookie.time;
+		Game.UCD.goldenCookieMaxTimerDisplay.innerHTML = "max time until next golden cookie: " + maxTimeRemaining;
 	}, 500)
 }, 4500);
