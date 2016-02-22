@@ -14,4 +14,4 @@ setTimeout(function(){
 	setInterval(function() {
 		Game.UCD.goldenCookieTimerDisplay.innerHTML = "time until next golden cookie: "
 	}, 1000)
-}, 2000);
+}, 4500);
