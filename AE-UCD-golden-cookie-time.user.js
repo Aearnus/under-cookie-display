@@ -8,10 +8,10 @@
 // ==/UserScript==
 
 setTimeout(function(){
-	UCD.goldenCookieTimerDisplay = document.createElement("div");
-	UCD.goldenCookieTimerDisplay.setAttribute("style", "font-size: 50%");
-	l("underCookieDisplay").appendChild(UCD.goldenCookieTimerDisplay);
+	Game.UCD.goldenCookieTimerDisplay = document.createElement("div");
+	Game.UCD.goldenCookieTimerDisplay.setAttribute("style", "font-size: 50%");
+	l("underCookieDisplay").appendChild(Game.UCD.goldenCookieTimerDisplay);
 	setInterval(function() {
-		UCD.goldenCookieTimerDisplay.innerHTML = "time until next golden cookie: "
+		Game.UCD.goldenCookieTimerDisplay.innerHTML = "time until next golden cookie: "
 	}, 1000)
 }, 2000);

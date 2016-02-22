@@ -6,7 +6,7 @@
 // @version     1
 // @grant       none
 // ==/UserScript==
-UCD = {}; //object to store UCD stuff
+Game.UCD = {}; //object to store UCD stuff
 
 var ucd = document.createElement("div");
 ucd.setAttribute("id", "underCookieDisplay");
