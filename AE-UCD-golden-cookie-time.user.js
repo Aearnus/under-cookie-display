@@ -12,6 +12,7 @@ setTimeout(function(){
 	Game.UCD.goldenCookieTimerDisplay.setAttribute("style", "font-size: 50%");
 	l("underCookieDisplay").appendChild(Game.UCD.goldenCookieTimerDisplay);
 	setInterval(function() {
-		Game.UCD.goldenCookieTimerDisplay.innerHTML = "time until next golden cookie: "
-	}, 1000)
+		var timeRemaining = Game.goldenCookie.minTime - Game.goldenCookie.time;
+		Game.UCD.goldenCookieTimerDisplay.innerHTML = "minimum time until next golden cookie: " + (timeRemaining =< 0 ? "none" : timeRemaining) 
+	}, 500)
 }, 4500);
