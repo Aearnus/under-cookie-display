@@ -7,7 +7,6 @@
 // @grant       none
 // ==/UserScript==
 setTimeout(function() {
-  GM_log("loaded")
   Game.Notify('Under Cookie Display','NOTE: if you are using Frozen Cookies autoclick, AE-clicked-per-second may or may not work. Use AE-clicked-per-second-deprecated if it does not.',"");
   Game.AE_realMouseCps = 0;
   Game.AE_clicksThisTimePeriod = 0;
