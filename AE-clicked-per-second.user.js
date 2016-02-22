@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name        Cookie Clicker Clicking CPS
-// @namespace   CookieClickerClickCPS
+// @namespace   http://github.com/Aearnus/
 // @description Shows your clicking within the CPS count of Cookie Clicker
 // @include     http://orteil.dashnet.org/cookieclicker/
 // @version     2
 // @grant       none
 // ==/UserScript==
+GM_log("loaded")
 Game.Notify('Under Cookie Display','NOTE: if you are using Frozen Cookies autoclick, AE-clicked-per-second may or may not work. Use AE-clicked-per-second-deprecated if it does not.',"");
 Game.AE_realMouseCps = 0;
 Game.AE_clicksThisTimePeriod = 0;
